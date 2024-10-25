@@ -21,11 +21,11 @@
   }
 
   /*-------- desktop font sizes------------- */
-  /* 
-  .display-font {
+
+  .desk-display-font {
     @apply text-9xl;
   }
-
+  /*
   h1 {
     @apply text-6xl;
   }
@@ -38,10 +38,10 @@
 
   /*--------- mobile font sizes------------ */
 
-  /* .display-font {
+  .mobile-display-font {
     @apply text-6xl;
   }
-
+  /*
   h1 {
     @apply text-2xl;
   }
