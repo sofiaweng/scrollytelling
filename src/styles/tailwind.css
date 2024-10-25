@@ -18,12 +18,17 @@
 
   html {
     scroll-behavior: smooth;
+    font-family: "articulat-cf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
   }
 
   /*-------- desktop font sizes------------- */
 
   .desk-display-font {
     @apply text-9xl;
+    font-family: "podium-soft-variable", sans-serif;
+    font-variation-settings: "wdth" 100;
   }
   /*
   h1 {
@@ -35,10 +40,24 @@
   h3 {
     @apply text-2xl;
   } */
-
+  h1 {
+    font-family: "podium-soft-variable", sans-serif;
+    font-variation-settings: "wdth" 100;
+    @apply uppercase;
+    @apply text-customRed;
+  }
+  h2,
+  h3 {
+    font-family: "oswald", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    @apply uppercase;
+  }
   /*--------- mobile font sizes------------ */
 
   .mobile-display-font {
+    font-family: "podium-soft-variable", sans-serif;
+    font-variation-settings: "wdth" 100;
     @apply text-6xl;
   }
   /*
