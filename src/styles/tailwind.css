@@ -47,7 +47,8 @@
     @apply text-customRed;
   }
   h2,
-  h3 {
+  h3,
+  .oswald {
     font-family: "oswald", sans-serif;
     font-weight: 900;
     font-style: normal;

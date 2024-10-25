@@ -10,10 +10,10 @@ import whitelogo from "src/assets/images/white_logo.webp";
         <div id="navbar" class="p-4 flex flex-row justify-between">
             <div id="logo" class="self-center">
                 <a href="/">
-                    <img class="w-20" src="/assets/images/white_logo.webp" alt="logo">
+                    <img class="w-20" src="src/assets/images/logoRed.svg" alt="logo">
                 </a>
             </div>
-            <nav id="desktopmenu" class="hidden lg:block font-semibold text-sm self-center">
+            <nav id="desktopmenu" class="hidden lg:block font-semibold text-base self-center oswald">
                 <ul class="flex flex-row gap-8">
                     <li><a href="#" class="border-transparent hover:border-b hover:border-customBlack duration-75 ease-linear uppercase">Plastikforurening</a></li>
                     <li><a href="#" class="border-transparent hover:border-b hover:border-customBlack duration-75 ease-linear uppercase">Problemet</a></li>
@@ -42,7 +42,7 @@ import whitelogo from "src/assets/images/white_logo.webp";
             </div>
         </div>
 
-        <nav id="mobilmenu" class="flex flex-col content-center lg:hidden font-semibold text-customBlack bg-customWhite"
+        <nav id="mobilmenu" class="flex flex-col content-center lg:hidden font-semibold text-customBlack bg-customWhite oswald"
             x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
             <ul>
                 <li class="p-4 border-b-2">
