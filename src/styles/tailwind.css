@@ -20,19 +20,35 @@
     scroll-behavior: smooth;
   }
 
+  /*-------- desktop font sizes------------- */
+  /* 
   .display-font {
-    @apply uppercase;
+    @apply text-9xl;
   }
 
   h1 {
-    @apply uppercase;
     @apply text-6xl;
   }
   h2 {
     @apply text-4xl;
-    @apply uppercase;
   }
   h3 {
     @apply text-2xl;
+  } */
+
+  /*--------- mobile font sizes------------ */
+
+  /* .display-font {
+    @apply text-6xl;
   }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  } */
 }
