@@ -8,24 +8,68 @@ import plasticFork from "../assets/images/blue_plastic_fork.png";
 import plasticToothbrush from "../assets/images/blue_plastic_toothbrush.png";
 ---
 
-<section class="relative bg-[#F8F8F8] py-16">
+<style>
+    /* Base movement for scrolling effect */
+    .scroll-move {
+        transition: transform 0.2s ease-out;
+        opacity: 0; /* Hidden initially */
+    }
 
-    <div class="absolute inset-0 flex justify-center items-center">
-        <Image src={plasticBag1} alt="Plastic Bag 1" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] top-8 left-1/4" />
-        <Image src={plasticBag2} alt="Plastic Bag 2" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] top-24 right-1/4" />
-        <Image src={plasticBag3} alt="Plastic Bag 3" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] bottom-16 left-1/3" />
-        <Image src={plasticBottle} alt="Plastic Bottle" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] bottom-24 left-1/5" />
-        <Image src={plasticFork} alt="Plastic Fork" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] top-20 right-1/5" />
-        <Image src={plasticToothbrush} alt="Plastic Toothbrush" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] bottom-8 right-1/4" />
+    .visible {
+        opacity: 1; /* Become visible when in the viewport */
+        transition: opacity 0.5s ease-out;
+    }
+</style>
+
+<section class="relative bg-[#F8F8F8] py-16 overflow-hidden" id="scrollytelling-section">
+    <!-- Background Plastic Images with Scroll Effect Classes -->
+    <div class="relative max-w-6xl mx-auto h-[800px] overflow-visible">
+        <Image src={plasticBag1} alt="Plastic Bag 1" class="absolute w-[500px] lg:w-[600px] top-0 left-[-100px] scroll-move" />
+        <Image src={plasticBag2} alt="Plastic Bag 2" class="absolute w-[300px] lg:w-[350px] top-8 right-[250px] scroll-move" />
+        <Image src={plasticBag3} alt="Plastic Bag 3" class="absolute w-[400px] lg:w-[450px] bottom-20 left-[200px] scroll-move" />
+        <Image src={plasticBottle} alt="Plastic Bottle" class="absolute w-[150px] lg:w-[200px] bottom-32 left-[700px] scroll-move" />
+        <Image src={plasticFork} alt="Plastic Fork" class="absolute w-[120px] lg:w-[150px] top-32 right-[250px] scroll-move" />
+        <Image src={plasticToothbrush} alt="Plastic Toothbrush" class="absolute w-[120px] lg:w-[150px] bottom-12 right-[-200px] scroll-move" />
+
+        <!-- Additional Fork and Toothbrush with Scroll Effect Classes -->
+        <Image src={plasticFork} alt="Plastic Fork" class="absolute w-[120px] lg:w-[150px] top-48 left-[-200px] scroll-move" />
+        <Image src={plasticToothbrush} alt="Plastic Toothbrush" class="absolute w-[120px] lg:w-[150px] top-10 right-[250px] scroll-move" />
     </div>
 
-
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <!-- Content Box with Absolute Positioning -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-center">
         <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">ET HAV AF PROBLEMER</h1>
         <div class="bg-[#001864]/50 p-8">
-            <p class="text-white text-lg lg:text-xl oswald">
+            <p class="text-white text-base lg:text-lg oswald">
                 Hver dag forurenes naturen med tusindvis af plastikstykker, som aldrig forsvinder igen. Hvert minut tømmes plastikaffald ud i havet, hvor det vikler sig rundt om sæler, skildpadder og delfiner og ender i maverne på hvaler, fugle og fisk. Plastik er at finde overalt, fra dybhavet og Marianergraven til toppen af Mount Everest og indlandsisen på Arktis. Det udgør en voksende trussel for vores natur- og havmiljø, økosystemer, klimaet og menneskers sundhed.
             </p>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('scroll', () => {
+        const scrollSection = document.getElementById('scrollytelling-section');
+        const scrollPosition = window.scrollY;
+        const images = document.querySelectorAll('.scroll-move');
+        const sectionTop = scrollSection.offsetTop;
+        const sectionHeight = scrollSection.offsetHeight;
+        const viewportHeight = window.innerHeight;
+
+        // Check if section is in the viewport
+        const sectionInView = scrollPosition + viewportHeight > sectionTop && scrollPosition < sectionTop + sectionHeight;
+
+        images.forEach((img, index) => {
+            const speed = 0.5 + index * 0.1;
+            const horizontalOffset = (scrollPosition - sectionTop) * speed;
+            const rotation = (scrollPosition - sectionTop) * (0.05 + index * 0.05); // Rotation factor based on scroll
+
+            if (sectionInView) {
+                img.style.transform = `translateX(${horizontalOffset}px) rotate(${rotation}deg)`;
+                img.classList.add('visible');
+            } else {
+                img.classList.remove('visible');
+            }
+        });
+    });
+</script>
