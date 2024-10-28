@@ -2,7 +2,7 @@
 ---
 import Button from '../components/Button.astro'
 import { Image } from 'astro:assets';
-import whitelogo from "src/assets/images/white_logo.webp";
+import logoRed from "../assets/images/logoRed.svg";
 ---
 
 <div>
@@ -10,7 +10,7 @@ import whitelogo from "src/assets/images/white_logo.webp";
         <div id="navbar" class="p-4 flex flex-row justify-between">
             <div id="logo" class="self-center">
                 <a href="/">
-                    <img class="w-20" src="src/assets/images/logoRed.svg" alt="logo">
+                    <Image class="w-20"  src={logoRed} alt="logo"></Image>
                 </a>
             </div>
             <nav id="desktopmenu" class="hidden lg:block font-semibold text-base self-center oswald">
