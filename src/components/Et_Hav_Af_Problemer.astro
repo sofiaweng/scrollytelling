@@ -1,3 +1,31 @@
 ---
---- 
+import { Image } from 'astro:assets';
+import plasticBag1 from "../assets/images/blue_plastic_bag_1.png";
+import plasticBag2 from "../assets/images/blue_plastic_bag_2.png";
+import plasticBag3 from "../assets/images/blue_plastic_bag_3.png";
+import plasticBottle from "../assets/images/blue_plastic_bottle.png";
+import plasticFork from "../assets/images/blue_plastic_fork.png";
+import plasticToothbrush from "../assets/images/blue_plastic_toothbrush.png";
+---
 
+<section class="relative bg-[#F8F8F8] py-16">
+
+    <div class="absolute inset-0 flex justify-center items-center">
+        <Image src={plasticBag1} alt="Plastic Bag 1" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] top-8 left-1/4" />
+        <Image src={plasticBag2} alt="Plastic Bag 2" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] top-24 right-1/4" />
+        <Image src={plasticBag3} alt="Plastic Bag 3" class="absolute w-80 h-80 lg:w-[400px] lg:h-[400px] bottom-16 left-1/3" />
+        <Image src={plasticBottle} alt="Plastic Bottle" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] bottom-24 left-1/5" />
+        <Image src={plasticFork} alt="Plastic Fork" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] top-20 right-1/5" />
+        <Image src={plasticToothbrush} alt="Plastic Toothbrush" class="absolute w-40 h-40 lg:w-[150px] lg:h-[150px] bottom-8 right-1/4" />
+    </div>
+
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">ET HAV AF PROBLEMER</h1>
+        <div class="bg-[#001864]/50 p-8">
+            <p class="text-white text-lg lg:text-xl oswald">
+                Hver dag forurenes naturen med tusindvis af plastikstykker, som aldrig forsvinder igen. Hvert minut tømmes plastikaffald ud i havet, hvor det vikler sig rundt om sæler, skildpadder og delfiner og ender i maverne på hvaler, fugle og fisk. Plastik er at finde overalt, fra dybhavet og Marianergraven til toppen af Mount Everest og indlandsisen på Arktis. Det udgør en voksende trussel for vores natur- og havmiljø, økosystemer, klimaet og menneskers sundhed.
+            </p>
+        </div>
+    </div>
+</section>
