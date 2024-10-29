@@ -55,7 +55,9 @@
     font-variation-settings: "wdth" 100;
     @apply uppercase;
     @apply text-customRed;
-  }
+    letter-spacing: 0.05em; 
+}
+
   h2,
   h3,
   .oswald {

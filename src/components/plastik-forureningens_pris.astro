@@ -1,22 +1,83 @@
 ---
-
+import { Image } from 'astro:assets';
+import plasticSeaweed1 from "../assets/images/plastic_seaweed_1.webp";
+import plasticSeaweed2 from "../assets/images/plastic_seaweed.webp";
+import seabirdIcon from "../assets/images/seabird.svg";
+import ripFishIcon from "../assets/images/rip_fish.svg";
+import ripEarthIcon from "../assets/images/rip_earth.svg";
+import plasticFoodIcon from "../assets/images/plastic_food.svg";
 ---
 
-  <div
-  class="absolute top left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-center"
->
-  <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">
-    Plastik-forureningens pris
-  </h1>
-  <div class="bg-[#001864] p-8">
-    <p class="lg:text-lg text-left">
-      Hver dag forurenes naturen med tusindvis af plastikstykker, som aldrig
-      forsvinder igen. Hvert minut tømmes plastikaffald ud i havet, hvor det
-      vikler sig rundt om sæler, skildpadder og delfiner og ender i maverne på
-      hvaler, fugle og fisk. Plastik er at finde overalt, fra dybhavet og
-      Marianergraven til toppen af Mount Everest og indlandsisen på Arktis.
-      Det udgør en voksende trussel for vores natur- og havmiljø, økosystemer,
-      klimaet og menneskers sundhed.
-  </p>    
-  </div>
-</div>
+<style>
+    /* Keyframes for enhanced underwater sway */
+    @keyframes livelySway {
+        0% { transform: translateX(0) translateY(0) rotate(0deg); }
+        25% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
+        50% { transform: translateX(-10px) translateY(5px) rotate(-2deg); }
+        75% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
+        100% { transform: translateX(0) translateY(0) rotate(0deg); }
+    }
+
+    .seaweed-left {
+        animation: livelySway 8s ease-in-out infinite;
+    }
+
+    .seaweed-right {
+        animation: livelySway 9s ease-in-out infinite reverse;
+    }
+</style>
+
+<section class="relative py-16 overflow-visible">
+    <!-- Background Seaweed Images with Enhanced Animation -->
+    <Image src={plasticSeaweed1} alt="Seaweed Left" class="absolute top-[-10%] left-[-20%] transform -translate-y-1/2 w-[50%] lg:w-[55%] max-w-none seaweed-left" />
+    <Image src={plasticSeaweed2} alt="Seaweed Right" class="absolute top-[-10%] right-[-20%] transform -translate-y-1/2 w-[50%] lg:w-[55%] max-w-none seaweed-right" />
+    
+    <!-- Content Container -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">
+            Plastik Dræber
+        </h1>
+
+        <div class="bg-[#000000]/80 p-8 flex flex-col gap-6 lg:gap-8 text-left">
+            <!-- Text Section with Icons and Headings -->
+            <div class="flex items-center gap-4">
+                <Image src={seabirdIcon} alt="Seabird Icon" class="w-10 lg:w-12 text-[#FF2A00]" />
+                <div>
+                    <h3 class="text-lg lg:text-xl text-[#FF2A00] font-bold">Skadeligt for dyrelivet</h3>
+                    <p class="text-white text-sm lg:text-lg">
+                        Over <span class="text-[#FF2A00] font-bold">90% af havfugle</span> har plastik i maven, og hvert år dør mere end 
+                        <span class="text-[#FF2A00] font-bold">100.000 havdyr</span> på grund af plastikforurening.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <Image src={ripFishIcon} alt="Rip Fish Icon" class="w-10 lg:w-12 text-[#FF2A00]" />
+                <div>
+                    <h3 class="text-lg lg:text-xl text-[#FF2A00] font-bold">Ødelæggelse af økosystemer</h3>
+                    <p class="text-white text-sm lg:text-lg">
+                        Plastik udgør op til <span class="text-[#FF2A00] font-bold">80% af alt havaffald</span> og forstyrrer koralrev, som beskytter kystlinjer og økosystemer.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <Image src={ripEarthIcon} alt="Rip Earth Icon" class="w-10 lg:w-12 text-[#FF2A00]" />
+                <div>
+                    <h3 class="text-lg lg:text-xl text-[#FF2A00] font-bold">Enorme CO₂-udledninger</h3>
+                    <p class="text-white text-sm lg:text-lg">
+                        Produktion af plastik udleder ca. <span class="text-[#FF2A00] font-bold">400 millioner tons CO₂</span> om året - det svarer til Danmarks samlede CO₂-udledning gange otte.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <Image src={plasticFoodIcon} alt="Plastic Food Icon" class="w-10 lg:w-12 text-[#FF2A00]" />
+                <div>
+                    <h3 class="text-lg lg:text-xl text-[#FF2A00] font-bold">Plastik i vores fødevarer</h3>
+                    <p class="text-white text-sm lg:text-lg">
+                        Mikroplastik findes nu i <span class="text-[#FF2A00] font-bold">94% af drikkevandet</span> verden over, og vi indtager omkring 
+                        <span class="text-[#FF2A00] font-bold">5 gram plastik om ugen</span> - svarende til et kreditkort.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
