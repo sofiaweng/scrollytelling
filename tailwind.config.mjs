@@ -10,6 +10,9 @@ export default {
         customLightGreen: "#81B47E",
         customDarkGreen: "#346332",
       },
+      fontFamily: {
+        mont: ["mont", "sans-serif"],
+      },
     },
   },
   plugins: [
