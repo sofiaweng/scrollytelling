@@ -8,11 +8,30 @@ import ripEarthIcon from "../assets/images/rip_earth.svg";
 import plasticFoodIcon from "../assets/images/plastic_food.svg";
 ---
 
-<section class="relative py-16 overflow-hidden">
-    <!-- Background Seaweed Images -->
-    <Image src={plasticSeaweed1} alt="Seaweed Left" class="absolute top-0 left-0 w-1/4 lg:w-1/3" />
-    <Image src={plasticSeaweed2} alt="Seaweed Right" class="absolute top-0 right-0 w-1/4 lg:w-1/3" />
+<style>
+    /* Keyframes for enhanced underwater sway */
+    @keyframes livelySway {
+        0% { transform: translateX(0) translateY(0) rotate(0deg); }
+        25% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
+        50% { transform: translateX(-10px) translateY(5px) rotate(-2deg); }
+        75% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
+        100% { transform: translateX(0) translateY(0) rotate(0deg); }
+    }
 
+    .seaweed-left {
+        animation: livelySway 8s ease-in-out infinite;
+    }
+
+    .seaweed-right {
+        animation: livelySway 9s ease-in-out infinite reverse;
+    }
+</style>
+
+<section class="relative py-16 overflow-visible">
+    <!-- Background Seaweed Images with Enhanced Animation -->
+    <Image src={plasticSeaweed1} alt="Seaweed Left" class="absolute top-[-10%] left-[-20%] transform -translate-y-1/2 w-[50%] lg:w-[55%] max-w-none seaweed-left" />
+    <Image src={plasticSeaweed2} alt="Seaweed Right" class="absolute top-[-10%] right-[-20%] transform -translate-y-1/2 w-[50%] lg:w-[55%] max-w-none seaweed-right" />
+    
     <!-- Content Container -->
     <div class="relative z-10 max-w-4xl mx-auto text-center">
         <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">
