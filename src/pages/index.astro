@@ -1,24 +1,27 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import HeroTry from '../components/Herotry.astro'; 
-import Hero from '../components/hero.astro'; // Import the hero component
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import HeroTry from "../components/Herotry.astro";
+import Hero from "../components/hero.astro"; // Import the hero component
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.webp";
 import EtHavAfProblemer from "../components/Et_Hav_Af_Problemer.astro";
 ---
 
 <MainLayout title="Titel" description="">
-	<HeroTry></HeroTry>
-	<EtHavAfProblemer />
-	
-	<article>
-		<h1 class="mobile-display-font lg:desk-display-font">Displayfont</h1>
-		<h1 class="text-4xl lg:text-6xl">Heading 1</h1>
-		<h2 class="text-2xl lg:text-4xl">Heading 2</h2>
-		<h3 class="text-lg lg:text-2xl">Heading 3</h3>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-	</article>
+  <HeroTry />
+  <EtHavAfProblemer />
+
+  <article>
+    <h1 class="mobile-display-font lg:desk-display-font">Displayfont</h1>
+    <h1 class="text-4xl lg:text-6xl">Heading 1</h1>
+    <h2 class="text-2xl lg:text-4xl">Heading 2</h2>
+    <h3 class="text-lg lg:text-2xl">Heading 3</h3>
+    <Button>Klik!</Button>
+    <p>
+      Link til <Link href="https://www.kea.dk" target="_blank"
+        >En anden side</Link>
+    </p>
+  </article>
 </MainLayout>
