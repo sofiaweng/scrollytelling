@@ -1,102 +1,182 @@
 ---
---- 
+
+---
 
 <style>
-/* Keyframes for the seagull flying animation */
-    @keyframes fly {
-        0% {
-            transform: translateX(-10%); /* Start off-screen from the right */
-        }
-        45% {
-            transform: translateX(-100%); /* Move to the left side of the viewport */
-        }
-        50% {
-            transform: translateX(-100%) translateY(-5px); /* Hover effect on the left */
-        }
-        55% {
-            transform: translateX(-100%); /* Return to position on the left */
-        }
-        100% {
-            transform: translateX(-10%); /* Fly back to the right */
-        }
+  /* Keyframes for the seagull flying animation */
+  @keyframes fly {
+    0% {
+      transform: translateX(-10%); /* Start off-screen from the right */
     }
+    45% {
+      transform: translateX(-100%); /* Move to the left side of the viewport */
+    }
+    50% {
+      transform: translateX(-100%) translateY(-5px); /* Hover effect on the left */
+    }
+    55% {
+      transform: translateX(-100%); /* Return to position on the left */
+    }
+    100% {
+      transform: translateX(-10%); /* Fly back to the right */
+    }
+  }
 
-    /* Keyframes for floating animation */
-    @keyframes float {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-15px); /* Move up by 15px */
-        }
-        100% {
-            transform: translateY(0);
-        }
+  /* Keyframes for floating animation */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
     }
-    
-    /* Seagull flying animation class */
-    .animate-fly {
-        animation: fly 6s ease-in-out infinite;
-        position: absolute;
-        top: -10px; /* Adjust this for preferred vertical position */
-        right: 0; /* Start from the right */
+    50% {
+      transform: translateY(-15px); /* Move up by 15px */
     }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
-    /* Floating animation class */
-    .animate-float {
-        animation: float 4s ease-in-out infinite;
-    }
+  /* Seagull flying animation class */
+  .animate-fly {
+    animation: fly 6s ease-in-out infinite;
+    position: absolute;
+    top: -10px; /* Adjust this for preferred vertical position */
+    right: 0; /* Start from the right */
+  }
+
+  /* Floating animation class */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 </style>
-    
+
 <section class="relative overflow-hidden bg-[#F8F8F8] text-center py-16">
-    <!-- Title -->
-    <div class="z-10 relative">
-        <!-- Seagull Image -->
-        <img src="/src/assets/images/seagull.png" alt="Seagull" class="-mt-24 w-28 h-28 lg:w-48 lg:h-48 animate-fly" /> <!-- Increased size -->
-        <h1 class="mt-20 mobile-display-font lg:desk-display-font text-[#FF2A00]">PLASTIC</h1>
-        <h1 class="mobile-display-font lg:desk-display-font text-[#FF2A00]">CHANGE</h1>
+  <!-- Title -->
+  <div class="z-10 relative">
+    <!-- Seagull Image -->
+    <img
+      src="/src/assets/images/seagull.webp"
+      alt="Seagull"
+      class="-mt-24 w-28 h-28 lg:w-48 lg:h-48 animate-fly"
+    />
+    <!-- Increased size -->
+    <h1 class="mt-20 mobile-display-font lg:desk-display-font text-[#FF2A00]">
+      PLASTIC
+    </h1>
+    <h1 class="mobile-display-font lg:desk-display-font text-[#FF2A00]">
+      CHANGE
+    </h1>
+  </div>
+
+  <!-- Layered Wave and Plastic Images with Absolute Positioning -->
+  <div class="relative mt-40 h-[600px]">
+    <!-- Set a fixed height to accommodate absolute positioning -->
+
+    <!-- Bottom Wave Layer with Floating Plastic Images (Visual Top Layer) -->
+    <div class="absolute inset-x-0 top-0 z-10 -mt-20">
+      <!-- Lowest z-index to appear visually at the top -->
+      <!-- Wave Image -->
+      <img
+        src="/src/assets/images/ocean_wave.webp"
+        alt="Ocean Wave"
+        class="w-full object-cover"
+      />
+      <!-- Plastic Images (Under the Wave) -->
+      <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
+        <img
+          src="/src/assets/images/blue_plastic_bottle.webp"
+          alt="Blue Plastic Bottle"
+          class="w-40 h-40 lg:w-48 lg:h-48 -mt-10 animate-float"
+          style="animation-delay: 0s;"
+        />
+        <img
+          src="/src/assets/images/green_plastic_bag.webp"
+          alt="Green Plastic Bag"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 0.6s;"
+        />
+        <img
+          src="/src/assets/images/silver_can.webp"
+          alt="Silver Can"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 1.4s;"
+        />
+        <img
+          src="/src/assets/images/orange_cup.webp"
+          alt="Orange Cup"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 2.3s;"
+        />
+      </div>
     </div>
 
-    <!-- Layered Wave and Plastic Images with Absolute Positioning -->
-    <div class="relative mt-40 h-[600px]"> <!-- Set a fixed height to accommodate absolute positioning -->
-
-        <!-- Bottom Wave Layer with Floating Plastic Images (Visual Top Layer) -->
-        <div class="absolute inset-x-0 top-0 z-10 -mt-20"> <!-- Lowest z-index to appear visually at the top -->
-            <!-- Wave Image -->
-            <img src="/src/assets/images/ocean_wave.png" alt="Ocean Wave" class="w-full object-cover" />
-            <!-- Plastic Images (Under the Wave) -->
-            <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
-                <img src="/src/assets/images/blue_plastic_bottle.png" alt="Blue Plastic Bottle" class="w-40 h-40 lg:w-48 lg:h-48 -mt-10 animate-float" style="animation-delay: 0s;" />
-                <img src="/src/assets/images/green_plastic_bag.png" alt="Green Plastic Bag" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 0.6s;" />
-                <img src="/src/assets/images/silver_can.png" alt="Silver Can" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 1.4s;" />
-                <img src="/src/assets/images/orange_cup.png" alt="Orange Cup" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 2.3s;" />
-            </div>
-        </div>
-
-        <!-- Middle Wave Layer with Floating Plastic Images (Visual Middle Layer) -->
-        <div class="absolute inset-x-0 top-20 z-20 -mt-20"> <!-- Middle z-index -->
-            <!-- Wave Image -->
-            <img src="/src/assets/images/ocean_wave_flip.png" alt="Ocean Wave" class="w-full object-cover" />
-            <!-- Plastic Images (Under the Wave) -->
-            <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
-                <img src="/src/assets/images/silver_can.png" alt="Silver Can" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 0.3s;" />
-                <img src="/src/assets/images/green_plastic.png" alt="Green Plastic" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 0.9s;" />
-                <img src="/src/assets/images/red_plastic_bag.png" alt="Red Plastic Bag" class="w-40 h-40 lg:w-48 lg:h-48 -mt-6 animate-float" style="animation-delay: 1.7s;" />
-            </div>
-        </div>
-
-        <!-- Top Wave Layer with Floating Plastic Images (Visual Bottom Layer) -->
-        <div class="absolute inset-x-0 top-40 z-30 -mt-20"> <!-- Highest z-index to appear visually at the bottom -->
-            <!-- Wave Image -->
-            <img src="/src/assets/images/ocean_wave.png" alt="Ocean Wave" class="w-full object-cover" />
-            <!-- Plastic Images (Under the Wave) -->
-            <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
-                <img src="/src/assets/images/orange_cup.png" alt="Orange Cup" class="w-40 h-40 lg:w-48 lg:h-48 -mt-10 animate-float" style="animation-delay: 0.1s;" />
-                <img src="/src/assets/images/green_plastic_bag.png" alt="Green Plastic Bag" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 1.1s;" />
-                <img src="/src/assets/images/red_plastic_bag.png" alt="Red Plastic Bag" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 1.9s;" />
-                <img src="/src/assets/images/blue_plastic_bottle.png" alt="Blue Plastic Bottle" class="w-40 h-40 lg:w-48 lg:h-48 animate-float" style="animation-delay: 2.6s;" />
-            </div>
-        </div>
-        
+    <!-- Middle Wave Layer with Floating Plastic Images (Visual Middle Layer) -->
+    <div class="absolute inset-x-0 top-20 z-20 -mt-20">
+      <!-- Middle z-index -->
+      <!-- Wave Image -->
+      <img
+        src="/src/assets/images/ocean_wave_flip.webp"
+        alt="Ocean Wave"
+        class="w-full object-cover"
+      />
+      <!-- Plastic Images (Under the Wave) -->
+      <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
+        <img
+          src="/src/assets/images/silver_can.webp"
+          alt="Silver Can"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 0.3s;"
+        />
+        <img
+          src="/src/assets/images/green_plastic.webp"
+          alt="Green Plastic"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 0.9s;"
+        />
+        <img
+          src="/src/assets/images/red_plastic_bag.webp"
+          alt="Red Plastic Bag"
+          class="w-40 h-40 lg:w-48 lg:h-48 -mt-6 animate-float"
+          style="animation-delay: 1.7s;"
+        />
+      </div>
     </div>
+
+    <!-- Top Wave Layer with Floating Plastic Images (Visual Bottom Layer) -->
+    <div class="absolute inset-x-0 top-40 z-30 -mt-20">
+      <!-- Highest z-index to appear visually at the bottom -->
+      <!-- Wave Image -->
+      <img
+        src="/src/assets/images/ocean_wave.webp"
+        alt="Ocean Wave"
+        class="w-full object-cover"
+      />
+      <!-- Plastic Images (Under the Wave) -->
+      <div class="absolute inset-0 flex justify-center gap-10 -mt-10 z-[-1]">
+        <img
+          src="/src/assets/images/orange_cup.webp"
+          alt="Orange Cup"
+          class="w-40 h-40 lg:w-48 lg:h-48 -mt-10 animate-float"
+          style="animation-delay: 0.1s;"
+        />
+        <img
+          src="/src/assets/images/green_plastic_bag.webp"
+          alt="Green Plastic Bag"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 1.1s;"
+        />
+        <img
+          src="/src/assets/images/red_plastic_bag.webp"
+          alt="Red Plastic Bag"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 1.9s;"
+        />
+        <img
+          src="/src/assets/images/blue_plastic_bottle.webp"
+          alt="Blue Plastic Bottle"
+          class="w-40 h-40 lg:w-48 lg:h-48 animate-float"
+          style="animation-delay: 2.6s;"
+        />
+      </div>
+    </div>
+  </div>
 </section>
