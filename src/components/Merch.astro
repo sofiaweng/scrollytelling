@@ -4,7 +4,9 @@ import seaweed from "../assets/images/seaweed.webp";
 import fishbag from "../assets/images/fish_bag.webp";
 import tshirt from "../assets/images/merch_shirt.webp";
 import bottle from "../assets/images/sheer_bottle.webp";
-import bag from "../assets/images/blue_plastic_bag2.webp";
+import bag from "../assets/images/blue_plastic_bag_2.webp";
+import bagtwo from "../assets/images/plastic_sheer.webp";
+import bagthree from "../assets/images/plasticbag_blue.webp";
 ---
 
 <style>
@@ -30,36 +32,46 @@ import bag from "../assets/images/blue_plastic_bag2.webp";
 >
   <!-- Background Plastic Images with Scroll Effect Classes -->
   <div class="relative max-w-6xl mx-auto h-[800px] overflow-visible">
-    <!-- <Image
-      src={}
-      alt="Plastic Bag 1"
-      class="absolute w-[500px] lg:w-[600px] top-0 left-[-100px] scroll-move"
+    <Image
+      src={seaweed}
+      alt="Seaweed"
+      class="absolute w-[300px] lg:w-[350px] top-8 left-[0px] scroll-move"
     />
     <Image
-      src={}
-      alt="Plastic Bag 2"
-      class="absolute w-[300px] lg:w-[350px] top-8 right-[250px] scroll-move"
+      src={seaweed}
+      alt="Seaweed"
+      class="absolute w-[300px] lg:w-[350px] top-8 left-[0px] scroll-move"
     />
     <Image
-      src={}
-      alt="Plastic Bag 3"
-      class="absolute w-[400px] lg:w-[450px] bottom-20 left-[200px] scroll-move"
+      src={fishbag}
+      alt="Fish with bag"
+      class="absolute w-[400px] lg:w-[450px] bottom-20 left-[0px] scroll-move"
     />
     <Image
-      src={}
-      alt="Plastic Bottle"
-      class="absolute w-[150px] lg:w-[200px] bottom-32 left-[700px] scroll-move"
+      src={tshirt}
+      alt="T-shirt with logo"
+      class="absolute w-[150px] lg:w-[200px] bottom-32 left-[0px] scroll-move"
     />
     <Image
-      src={}
-      alt="Plastic Fork"
-      class="absolute w-[120px] lg:w-[150px] top-32 right-[250px] scroll-move"
+      src={bottle}
+      alt="Plastic bottle"
+      class="absolute w-[120px] lg:w-[150px] top-32 right-[0px] scroll-move"
     />
     <Image
-      src={}
-      alt="Plastic Toothbrush"
-      class="absolute w-[120px] lg:w-[150px] bottom-12 right-[-200px] scroll-move"
-    /> -->
+      src={bag}
+      alt="Plastic bag"
+      class="absolute w-[120px] lg:w-[150px] bottom-10 right-[0px] scroll-move"
+    />
+    <Image
+      src={bagtwo}
+      alt="Plastic bag"
+      class="absolute w-[120px] lg:w-[150px] bottom-12 right-[0px] scroll-move"
+    />
+    <Image
+      src={bagthree}
+      alt="Plastic bag"
+      class="absolute w-[120px] lg:w-[150px] bottom-12 right-[0px] scroll-move"
+    />
 
     <!-- Additional Fork and Toothbrush with Scroll Effect Classes -->
     <!-- <Image
@@ -76,7 +88,7 @@ import bag from "../assets/images/blue_plastic_bag2.webp";
 
   <!-- Content Box with Absolute Positioning -->
   <div
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-center"
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-left"
   >
     <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">Merchandise</h1>
     <h2>Vi donerer 5% af omsætningen til havet</h2>
@@ -90,7 +102,7 @@ import bag from "../assets/images/blue_plastic_bag2.webp";
   </div>
 </section>
 
-<script>
+<!-- <script>
   document.addEventListener("scroll", () => {
     const scrollSection = document.getElementById("scrollytelling-section");
     const scrollPosition = window.scrollY;
@@ -117,4 +129,4 @@ import bag from "../assets/images/blue_plastic_bag2.webp";
       }
     });
   });
-</script>
+</script> -->
