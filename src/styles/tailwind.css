@@ -23,6 +23,16 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "mont";
+    src: url("/public/fonts/Montserrat-VariableFont_wght.woff2");
+    font-style: normal;
+  }
+
+  p {
+    font-family: mont;
+  }
+
   /*-------- desktop font sizes------------- */
 
   .desk-display-font {
