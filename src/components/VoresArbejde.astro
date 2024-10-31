@@ -37,8 +37,7 @@ import plasticToothbrush from "../assets/images/blue_plastic_toothbrush.webp";
     <article class=" relative flex-wrap overflow-hidden md:hidden">
    
     <div class="aspect-[498/312]  hover:rotate-6 ease-in-out duration-75 ">
-        <div class=" bg-cover w-full h-full bg-no-repeat bg-[url('src/assets/images/fish_1_flip.webp')] text-2xl text-customBlack oswald flex items-center justify-center text-center -rotate-12
-">
+        <div class=" bg-cover w-full h-full bg-no-repeat bg-[url('src/assets/images/fish_1_flip.webp')] text-2xl text-customBlack oswald flex items-center justify-center text-center -rotate-12">
         <span class="rotate-12">Internationalt <br> arbejde</span>
         </div>
     </div>
@@ -136,46 +135,46 @@ import plasticToothbrush from "../assets/images/blue_plastic_toothbrush.webp";
 </section>
 
 <style>
-    .fisk4:hover ~ .plastikchange, .fisk3:hover ~ .plastik, .fisk1:hover ~ .international, .fisk2:hover ~ .politik {
-    position: absolute; /* Gør dem absolut placerede */
-    top: 50%; /* Centrer vertikalt */
-    left: 50%; /* Centrer horisontalt */
-    transform: translate(-50%, -50%); /* Juster så de står helt centralt */
-    z-index: 50; /* Sørg for at de vises øverst */
-    opacity: 1; /* Sørg for, at de er synlige */
-    display: inherit;
-    transition: all 0.3s ease-in-out; /* Glidende overgang */
-}
-    .boks {
-        position: absolute; /* Gør dem absolut placerede */
-    top: 50%; /* Centrer vertikalt */
-    left: 50%; /* Centrer horisontalt */
-    transform: translate(-50%, -50%); /* Juster så de står helt centralt */
-    opacity: 0; /* Skjult som standard */
-    z-index: 50; 
-    display: hidden;
-    transition: all 0.3s ease-in-out; /* Glidende overgang */
-}
-.fisk{
-   cursor: pointer;
-}
-@keyframes float {
-    0% {
-      transform: translateY(0);
+    /* Keyframes for lively floating animation */
+    @keyframes livelyFloat {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        20% { transform: translate(5px, -5px) rotate(2deg); }
+        40% { transform: translate(-5px, 5px) rotate(-2deg); }
+        60% { transform: translate(5px, -5px) rotate(2deg); }
+        80% { transform: translate(-5px, 5px) rotate(-2deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
     }
-    50% {
-      transform: translateY(-10px); /* Move up by 15px */
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  /* Floating animation class */
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-    /* Keyframes for enhanced underwater sway */
+    /* Apply the floating animation to fish classes */
+    .fisk1, .fisk2, .fisk3, .fisk4 {
+        animation: livelyFloat 5s ease-in-out infinite;
+    }
+
+    /* Existing styles for hover interaction */
+    .fisk4:hover ~ .plastikchange, .fisk3:hover ~ .plastik, .fisk1:hover ~ .international, .fisk2:hover ~ .politik {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+        opacity: 1;
+        display: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .boks {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        z-index: 50;
+        display: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    /* Underwater sway for seaweed */
     @keyframes livelySway {
         0% { transform: translateX(0) translateY(0) rotate(0deg); }
         25% { transform: translateX(10px) translateY(-5px) rotate(2deg); }
