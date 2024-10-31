@@ -74,40 +74,104 @@ import plasticToothbrush from "../assets/images/blue_plastic_toothbrush.webp";
 </article>
 
 <!-- comp version -->
-    <article class="relative  h-[90vh] hidden md:block">
-        <div class="aspect-[498/312]  w-[35%] z-20 absolute bottom-10 left-24 hover:rotate-6 ease-in-out duration-75 ">
+    <article class="  relative  h-[90vh] hidden md:grid max-w-6xl mx-auto">
+        <div
+          data-aos="fade-down-right"
+		data-aos-delay="400"
+        style="animation-delay: 1.2s;"
+         class=" fisk1 aspect-[498/312]  w-[35%] z-20 absolute top-64 left-10 hover:rotate-6 ease-in-out duration-75 ">
             <div class=" bg-cover w-full h-full bg-no-repeat bg-[url('src/assets/images/fish_1_flip.webp')] text-lg lg:text-2xl text-customBlack oswald flex items-center justify-center text-center">
             <span>Internationalt  <br>arbejde</span>
             </div>
         </div>
-    <div class="aspect-[667/255] w-[40%] z-10 absolute left-36 top-24  hover:rotate-6 ease-in-out duration-75">
+        <div class="boks international bg-[#000000]/80 z-30 w-1/2 ">
+            <p class="p-5 ">Vi <span class="text-customRed font-bold">samarbejder</span> med <span class="text-customRed font-bold">industri-aktører</span> om konkrete <span class="text-customRed font-bold">løsninger</span> i praksis og industriel innovation.</p>
+        </div>
+       
+    <div
+      data-aos="fade-right"
+		data-aos-delay="400"
+         style="animation-delay: 1s;"
+     class=" fisk2 aspect-[667/255] w-[40%] z-10 absolute left-36 top-24  hover:rotate-6 ease-in-out duration-75">
     <div class=" bg-cover w-full h-full bg-no-repeat  bg-[url('src/assets/images/fish_2.webp')] text-lg lg:text-2xl text-customBlack oswald flex items-center justify-center">
         <span>Politisk arbejde</span>
     </div>
     </div>
-    <div class="bg-[#000000]/80 z-30 w-1/2 absolute right-0">
-        <p>Vi arbejder med politik og grøn lovgivning, blandt andet kæmper vi for ambitiøse nationale mål for reduktion og genbrug af plastik</p>
+    <div class=" boks politik bg-[#000000]/80  w-1/2  ">
+        <p class="p-5 ">Vi arbejder med <span class="text-customRed font-bold">politik og grøn lovgivning</span>, blandt andet kæmper vi for ambitiøse nationale mål for <span class="text-customRed font-bold">reduktion og genbrug af plastik</span></p>
     </div>
-    <div class="aspect-[608/485] w-[50%] z-10 absolute right-8 top-48   hover:rotate-6 ease-in-out duration-75">
+    <div
+    data-aos="fade-down-right"
+		data-aos-delay="400"
+            style="animation-delay: 2.1s;"
+     class="fisk3 aspect-[608/485] w-[50%] z-10 absolute right-8 top-48   hover:rotate-6 ease-in-out duration-75">
     <div class=" bg-cover w-full h-full bg-no-repeat  bg-[url('src/assets/images/seaturtle.webp')] text-lg lg:text-2xl text-customBlack oswald flex items-center justify-center">
         <span>Plastikfrit <br> samfund</span>
     </div>
 </div>
-    <div class="aspect-[522/412]  w-[40%] z-20 absolute right-0 hover:rotate-6 ease-in-out duration-75 ">
+<div class="plastik boks  bg-[#000000]/80 w-1/2 ">
+    <p class="p-5 "
+    >Vi <span class="text-customRed font-bold">mobiliserer </span>og <span class="text-customRed font-bold">engagerer</span> befolkningen, gennem folkeoplysning om <span class="text-customRed font-bold">konsekvenserne</span> med plastikforurening og hvad vi mener er <span class="text-customRed font-bold">løsningerne</span> til det.</p>
+</div>
+   
+<div
+      data-aos="fade-down-left"
+		data-aos-delay="400"
+         style="animation-delay: 2s;"
+     class=" fisk4 aspect-[522/412]  w-[40%] z-20 absolute right-0 hover:scale-150 ease-in-out duration-75 ">
+    
         <div class=" bg-cover w-full h-full bg-no-repeat  bg-[url('src/assets/images/fish_1.webp')] text-lg lg:text-2xl text-customBlack oswald flex items-center justify-center text-center">
         <span>Plastic Changer <br>bevægelsen </span>
         </div>
+    </div></div>
+    <div class="plastikchange boks bg-[#000000]/80 z-30 w-1/2 absolute right-0">
+        <p class="p-5 ">Vi vidensindsamler, laver<span class="text-customRed font-bold"> undervisningsforløb </span>og <span class="text-customRed font-bold">uddanner,</span> bl.a. børn og unge i landets folkeskoler og gymnasieuddannelser om plastikforurening, produktion og forbrug.</p>
     </div>
-    <div class="bg-[#000000]/80 z-30 w-1/2 absolute right-0">
-        <p>Vi vidensindsamler, laver undervisningsforløb og uddanner, bl.a. børn og unge i landets folkeskoler og gymnasieuddannelser om plastikforurening, produktion og forbrug.</p>
-    </div>
-
-    <div></div>
+   
 </article>
 
 </section>
 
 <style>
+    .fisk4:hover ~ .plastikchange, .fisk3:hover ~ .plastik, .fisk1:hover ~ .international, .fisk2:hover ~ .politik {
+    position: absolute; /* Gør dem absolut placerede */
+    top: 50%; /* Centrer vertikalt */
+    left: 50%; /* Centrer horisontalt */
+    transform: translate(-50%, -50%); /* Juster så de står helt centralt */
+    z-index: 50; /* Sørg for at de vises øverst */
+    opacity: 1; /* Sørg for, at de er synlige */
+    display: inherit;
+    transition: all 0.3s ease-in-out; /* Glidende overgang */
+}
+    .boks {
+        position: absolute; /* Gør dem absolut placerede */
+    top: 50%; /* Centrer vertikalt */
+    left: 50%; /* Centrer horisontalt */
+    transform: translate(-50%, -50%); /* Juster så de står helt centralt */
+    opacity: 0; /* Skjult som standard */
+    z-index: 50; 
+    display: hidden;
+    transition: all 0.3s ease-in-out; /* Glidende overgang */
+}
+.fisk{
+   cursor: pointer;
+}
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Move up by 15px */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating animation class */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
     /* Keyframes for enhanced underwater sway */
     @keyframes livelySway {
         0% { transform: translateX(0) translateY(0) rotate(0deg); }
