@@ -1,21 +1,19 @@
 ---
-import { Image } from "astro:assets";
-import graf from "../assets/images/graf.svg";
-import soejle1 from "../assets/images/soejle1.svg";
-import soejle2 from "../assets/images/soejle2.svg";
-import soejle3 from "../assets/images/soejle3.svg";
-import soejle4 from "../assets/images/soejle4.svg";
-import soejle5 from "../assets/images/soejle5.svg";
+
 ---
 
-<div
-  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-left"
->
-</div>
-<h1 class="text-4xl lg:text-6xl text-[#FF2A00] lg:p-16">Havets trusler</h1>
-<div class="lg:grid grid-cols-2 lg:p-6">
-  <div class="rounded-lg p-4 lg:pl-16">
-    <p class="text-white text-base lg:text-lg max-w-lg">
+<article class="mx-5 py-16 md:max-w-4xl md:mx-auto">
+
+<h1
+    	data-aos="fade-up"
+		data-aos-delay="400"
+ class="text-4xl lg:text-6xl text-[#FF2A00]  text-center ">Havets trusler</h1>
+<div class="md:grid grid-cols-2  gap-3">
+  <div 
+    	data-aos="fade-right"
+		data-aos-delay="400"
+  class=" py-4 ">
+    <p class="text-white text-base lg:text-lg md:mx-3 lg:mx-0">
       Grafen viser de fem mest almindelige typer affald, der findes i havet:
       plastikposer, plastikflasker, engangsbestik, emballage og syntetisk reb.
       Disse typer plastikaffald udgør en stor trussel for havlivet, da de
@@ -23,11 +21,14 @@ import soejle5 from "../assets/images/soejle5.svg";
       beskytte vores oceaner er det vigtigt at reducere brugen af engangsplastik
       og sikre korrekt affaldshåndtering.
     </p>
-    <p class="text-sm">Kilde: Carmen Morales-Caselles</p>
+    <p class="text-sm pt-5">Kilde: Carmen Morales-Caselles</p>
   </div>
-  <div class="">
+  <div 
+    	data-aos="fade-left"
+		data-aos-delay="400"
+  class="">
     <div>
-      <h3 class="text-lg max-w-xl mb-4 text-white lg:text-xl pl-5">
+      <h3 class="text-lg max-w-xl py-4 md:mb-4 text-white lg:text-xl md:pl-5">
         Top 5 mest udbredte affald der forurener verdens hav
       </h3>
     </div>
@@ -141,6 +142,7 @@ import soejle5 from "../assets/images/soejle5.svg";
     </svg>
   </div>
 </div>
+</article>
 <style>
   .bar {
     transform: scaleY(0);
