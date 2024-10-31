@@ -17,7 +17,9 @@
     "alpinejs": "^3.14.1",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "apexcharts": "^4.0.0",
     "astro": "^4.16.7",
+    "lodash": "^4.17.21",
     "motion": "^10.18.0"
   },
   "devDependencies": {

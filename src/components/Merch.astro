@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import seaweed from "../assets/images/seaweed.webp";
+import seaweed2 from "../assets/images/seaweed_flipped.webp";
 import fishbag from "../assets/images/fish_bag.webp";
 import tshirt from "../assets/images/merch_shirt.webp";
 import bottle from "../assets/images/sheer_bottle.webp";
@@ -9,29 +10,9 @@ import bagtwo from "../assets/images/plastic_sheer.webp";
 import bagthree from "../assets/images/plasticbag_blue.webp";
 ---
 
-<style>
-  /* Base movement for scrolling effect */
-  .scroll-move {
-    transition: transform 0.2s ease-out;
-    opacity: 0; /* Hidden initially */
-  }
-
-  .visible {
-    opacity: 1; /* Become visible when in the viewport */
-    transition: opacity 0.5s ease-out;
-  }
-
-  h1 {
-    text-shadow: 2px 2px 4px #000000;
-  }
-</style>
-
-<section
+<!-- <section
   class="relative  py-16 overflow-hidden"
-  id="scrollytelling-section"
->
-  <!-- Background Plastic Images with Scroll Effect Classes -->
-  <div class="relative max-w-6xl mx-auto h-[800px] overflow-visible">
+  id="scrollytelling-section" --><!-- Background Plastic Images with Scroll Effect Classes --><!-- <div class="relative max-w-6xl mx-auto h-[800px] overflow-visible">
     <Image
       src={seaweed}
       alt="Seaweed"
@@ -71,10 +52,7 @@ import bagthree from "../assets/images/plasticbag_blue.webp";
       src={bagthree}
       alt="Plastic bag"
       class="absolute w-[120px] lg:w-[150px] bottom-12 right-[0px] scroll-move"
-    />
-
-    <!-- Additional Fork and Toothbrush with Scroll Effect Classes -->
-    <!-- <Image
+    /> --><!-- Additional Fork and Toothbrush with Scroll Effect Classes --><!-- <Image
       src={}
       alt="Plastic Fork"
       class="absolute w-[120px] lg:w-[150px] top-48 left-[-200px] scroll-move"
@@ -83,50 +61,178 @@ import bagthree from "../assets/images/plasticbag_blue.webp";
       src={}
       alt="Plastic Toothbrush"
       class="absolute w-[120px] lg:w-[150px] top-10 right-[250px] scroll-move"
-    /> -->
-  </div>
+    /> --><!-- </div> --><!-- Content Box with Absolute Positioning -->
+<div
+  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-left"
+>
+</div>
 
-  <!-- Content Box with Absolute Positioning -->
-  <div
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 max-w-4xl text-left"
-  >
-    <h1 class="text-4xl lg:text-6xl text-[#FF2A00] mb-8">Merchandise</h1>
-    <h2>Vi donerer 5% af omsætningen til havet</h2>
-    <div class="bg-[#001864] p-8">
-      <p class="text-white text-base lg:text-lg">
-        Køb miljøvenlige produkter, der støtter Plastic Change. Fra
-        genanvendelige vandflasker til tasker lavet af genbrugsmaterialer – alt
-        sammen til fordel for en plastikfri fremtid.
-      </p>
+<section class="relative py-16 overflow-visible">
+  <div class="container mx-auto flex flex-col lg:flex-row items-start gap-8">
+    <!-- Venstre kolonne: Flasker og poser -->
+    <div class="flex flex-col items-center gap-4 lg:w-1/2">
+      <Image src={bottle} alt="Plastic bottle" class="max-w-40 fade-in" />
+      <Image
+        src={bag}
+        alt="Plastic bag in the ocean"
+        class="max-w-60 fade-in"
+      />
+      <Image src={bagtwo} alt="Plastic bag swimming" class="max-w-40 fade-in" />
+      <Image
+        src={bagthree}
+        alt="Plastic bag floating"
+        class="max-w-40 fade-in"
+      />
+    </div>
+
+    <!-- Højre kolonne: T-shirt, overskrifter og fisk -->
+    <div class="flex flex-col gap-4 lg:w-1/2">
+      <!-- T-shirt -->
+      <div>
+        <Image src={tshirt} alt="T-shirt with logo" class="w-full h-auto" />
+      </div>
+
+      <!-- Tekst og fisk med tekstboks -->
+      <div>
+        <h1 class="text-4xl lg:text-6xl text-[#FF2A00]">Merchandise</h1>
+        <h2 class="text-2xl lg:text-4xl text-white">
+          Vi donerer 5% af omsætningen til havet
+        </h2>
+
+        <!-- Billede med fisk og tekstboks -->
+        <div class="relative mt-4">
+          <Image
+            src={fishbag}
+            alt="Fish swimming with a plastic bag"
+            class="w-full h-auto"
+          />
+          <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 p-4 lg:p-6 rounded-lg max-w-md"
+          >
+            <p class="text-white text-base lg:text-lg">
+              Køb miljøvenlige produkter, der støtter Plastic Change. Fra
+              genanvendelige vandflasker til tasker lavet af genbrugsmaterialer
+              – alt sammen til fordel for en plastikfri fremtid.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- <script>
-  document.addEventListener("scroll", () => {
-    const scrollSection = document.getElementById("scrollytelling-section");
-    const scrollPosition = window.scrollY;
-    const images = document.querySelectorAll(".scroll-move");
-    const sectionTop = scrollSection.offsetTop;
-    const sectionHeight = scrollSection.offsetHeight;
-    const viewportHeight = window.innerHeight;
+  <!-- Tang billeder bagved indholdet -->
+  <Image
+    src={seaweed}
+    alt="Seaweed Left"
+    class="absolute top-[-10%] left-[-10%] w-1/4 lg:w-1/3 max-w-none z-0"
+  />
+  <Image
+    src={seaweed2}
+    alt="Seaweed Right"
+    class="absolute top-[-10%] right-[-10%] w-1/4 lg:w-1/3 max-w-none z-0"
+  />
 
-    // Check if section is in the viewport
-    const sectionInView =
-      scrollPosition + viewportHeight > sectionTop &&
-      scrollPosition < sectionTop + sectionHeight;
+  <!-- <section class="relative py-16 overflow-visible">
+  <div class="relative z-100">
+    <Image src={bottle} alt="Plastic bottle" class="max-w-40" />
+  </div>
+  <div class="relative z-100">
+    <Image src={bag} alt="Plastic bag in the ocean" class="max-w-60" />
+  </div>
+  <div class="relative z-100">
+    <Image src={bagtwo} alt="Plastic bag swimming" class="max-w-40" />
+  </div>
+  <div class="relative z-100">
+    <Image src={bagthree} alt="Plastic bottle" class="max-w-40" />
+  </div>
+  <Image
+    src={seaweed}
+    alt="Seaweed Left"
+    class="absolute z-0 top-[-10%] left-[-20%] transform -translate-y-1/2 w-10 lg:w-[55%] max-w-none seaweed-left"
+  />
+  <Image
+    src={seaweed2}
+    alt="Seaweed Right"
+    class="flip absolute top-[-10%] right-[-20%] transform -translate-y-1/2 w-[50%] lg:w-[55%] max-w-none seaweed-right"
+  />
 
-    images.forEach((img, index) => {
-      const speed = 0.5 + index * 0.1;
-      const horizontalOffset = (scrollPosition - sectionTop) * speed;
-      const rotation = (scrollPosition - sectionTop) * (0.05 + index * 0.05); // Rotation factor based on scroll
+  <div class="p-12">
+    <div class="flex flex-col lg:flex-row items-start gap-8">
+    Venstre kolonne med T-shirt -->
+  <!-- <div class="lg:w-1/2 flex-shrink-0">
+        <Image
+          src={tshirt}
+          alt="T-shirt with logo"
+          class="w-full h-auto z-100"
+        />
+      </div> -->
 
-      if (sectionInView) {
-        img.style.transform = `translateX(${horizontalOffset}px) rotate(${rotation}deg)`;
-        img.classList.add("visible");
-      } else {
-        img.classList.remove("visible");
+  <!-- Højre kolonne med overskrifter og fisken med tekstboks -->
+  <!-- <div class="relative z-10 max-w-4xl text-left lg:w-1/2">
+        <h1 class="text-4xl lg:text-6xl text-[#FF2A00]">Merchandise</h1>
+        <h2 class="text-2xl lg:text-4xl text-white">
+          Vi donerer 5% af omsætningen til havet
+        </h2>
+        <div class="relative">
+          <Image
+            src={fishbag}
+            alt="Fish swimming with a plastic bag"
+            class="w-full h-auto"
+          />
+          <div
+            class="absolute top-2/3 left-44 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 p-4 lg:p-6 rounded-lg max-w-md"
+          >
+            <p class="text-white text-base lg:text-lg text-left">
+              Køb miljøvenlige produkter, der støtter Plastic Change. Fra
+              genanvendelige vandflasker til tasker lavet af genbrugsmaterialer
+              – alt sammen til fordel for en plastikfri fremtid.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  -->
+
+  <!-- <Image src={fishbag} alt="Fish swimming with a plastic bag" class="" />
+    <div class="bg-[#000000]/80 p-8 gap-6 lg:gap-8 text-left">
+      <p class="text-white text-base lg:text-lg">
+        Køb miljøvenlige produkter, der støtter Plastic Change. Fra
+        genanvendelige vandflasker til tasker lavet af genbrugsmaterialer –
+        alt sammen til fordel for en plastikfri fremtid.
+      </p>
+    </div> -->
+
+  <style>
+    /* Keyframes for enhanced underwater sway */
+    @keyframes livelySway {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
       }
-    });
-  });
-</script> -->
+      25% {
+        transform: translateX(10px) translateY(-5px) rotate(2deg);
+      }
+      50% {
+        transform: translateX(-10px) translateY(5px) rotate(-2deg);
+      }
+      75% {
+        transform: translateX(10px) translateY(-5px) rotate(2deg);
+      }
+      100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+    }
+
+    .seaweed-left {
+      animation: livelySway 8s ease-in-out infinite;
+    }
+
+    .seaweed-right {
+      animation: livelySway 9s ease-in-out infinite reverse;
+    }
+
+    .flip {
+      transform: scaleX(-1);
+    }
+  </style>
+</section>
